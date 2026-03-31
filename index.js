@@ -46,6 +46,11 @@ app.get("/posts", (req, res) => {
 });
 
 //CHALLENGE 2: GET a specific post by id
+app.get("/posts/:id", (req, res) => {
+  const id = parseInt(req.params.id);
+  const askedPost = posts.find((post) => post.id === id);
+  res.json(askedPost);
+});
 
 //CHALLENGE 3: POST a new post
 
